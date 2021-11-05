@@ -36,28 +36,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun squareClick(clickedView: View) {
-
-        if (clickedView is TextView) {
-
-            val result = resultText.text.toString()
-
-            if (result.isNotEmpty()) {
-                num1 = result.toDouble()
-            }
-
-            square = clickedView.text.toString()
-
-            when(square){
-                "x²" -> resultText.text = (num1 * num1).toString()
-                "x³" -> resultText.text = (num1 * num1 * num1).toString()
-
-            }
-        }
-
-
-
-    }
 
 
     fun operationClick(clickedView: View) {
@@ -72,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
             operation = clickedView.text.toString()
 
-            resultText.text = ""
+            resultText.text = operation.toString()
 
         }
     }
@@ -94,6 +72,29 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+    }
+
+    fun squareClick(clickedView: View) {
+
+        if (clickedView is TextView) {
+
+            val result = resultText.text.toString()
+
+            if (result.isNotEmpty()) {
+                num1 = result.toDouble()
+            }
+
+            square = clickedView.text.toString()
+
+            when(square){
+                "x²" -> resultText.text = (num1 * num1).toString()
+                "x³" -> resultText.text = (num1 * num1 * num1).toString()
+
+            }
+        }
+
+
 
     }
 
