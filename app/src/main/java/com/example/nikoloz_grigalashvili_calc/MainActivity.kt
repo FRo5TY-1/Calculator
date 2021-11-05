@@ -17,6 +17,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        if (resultText.length() > 15 ){
+            resultText.text = "ERROR"
+        }
+
         resultText = findViewById(R.id.resultText)
     }
 
@@ -50,10 +55,11 @@ class MainActivity : AppCompatActivity() {
 
             operation = clickedView.text.toString()
 
-            resultText.text = operation.toString()
+            resultText.text = ""
 
         }
     }
+
 
     fun equalsClick(clickedView: View){
 
@@ -69,7 +75,6 @@ class MainActivity : AppCompatActivity() {
             "-" -> resultText.text = (num1 - num2).toString()
             "*" -> resultText.text = (num1 * num2).toString()
             "/" -> resultText.text = (num1 / num2).toString()
-
 
         }
 
@@ -93,10 +98,8 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-
-
-
     }
+
 
     fun clearClick(clickedView: View){
         if (clickedView is TextView){
